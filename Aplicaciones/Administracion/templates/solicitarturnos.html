@@ -1,0 +1,48 @@
+{% extends "./principal.html" %} 
+
+{% block title %} Solicitud de Turnos {% endblock  %}
+
+{% block body  %}   
+<div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        <h2>Solicitud de Turnos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/registrarTurno/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                    
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre"
+                            maxlength="50" required>
+                    </div>
+
+                    <div class="form-group py-2">
+                        <input type="text" id="txtTipoDocumento" name="txtTipoDocumento" class="form-control" placeholder="Tipo Documento"
+                            maxlength="20" required>
+                    </div>
+
+                    <div class="form-group py-2">
+                        <input type="text" id="numNumerodeDocumento" name="numNumerodeDocumento" class="form-control" placeholder="Numero de Documento" max="20"
+                            required>
+                    </div>
+
+                    <div class="form-group py-2">
+                        
+                        <label>Imagen</label>
+                        <input type="file" name="txtImagen" id="txtImagen" requiredy>
+
+
+                    </div>
+
+                    <div class="form-group py-4">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+  
+
+{% endblock  %}
